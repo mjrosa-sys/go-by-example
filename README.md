@@ -23,5 +23,7 @@ go run .
 | Folder | What you learn |
 |---|---|
 | [`webdev/fileserver/`](webdev/fileserver/README.md) | serving files over HTTP: `http.FileServer`, `http.Dir`, `StripPrefix`, `ServeFile`, `//go:embed`, mux patterns, middleware |
+| [`webdev/servemux/`](webdev/servemux/README.md) | Go's standard router: pattern grammar, method matching, wildcards and `PathValue`, precedence and conflict panics, the internal routing tree, mounting sub-muxes |
+| [`webdev/handlers/`](webdev/handlers/README.md) | the `http.Handler` interface: four ways to make one, the `ResponseWriter` contract (sniffing, chunking, HEAD/204 rules), streaming with `Flusher`/`Unwrap`, panic recovery, `r.Context()`, and the "Life Of A Write" internals |
 
 (Add new topics as rows here.)
