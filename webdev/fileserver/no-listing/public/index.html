@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>No directory listing here</title>
+</head>
+<body>
+    <h1>Directory listings are disabled on this server</h1>
+
+    <p><a href="/docs/"><code>/docs/</code></a> returns <strong>404 Not Found</strong> —
+       the listing is hidden because <code>docs/</code> has no <code>index.html</code>.</p>
+
+    <p>But <a href="/docs/secret.txt"><code>/docs/secret.txt</code></a> is still served if
+       you already know the file name: <strong>hiding is not the same as protecting</strong>.
+       Real protection means checking who is asking (authorization), not
+       whether they know where things are.</p>
+
+    <p><a href="/about/"><code>/about/</code></a> works normally: directories that DO
+       contain an <code>index.html</code> are unaffected by the wrapper.</p>
+</body>
+</html>

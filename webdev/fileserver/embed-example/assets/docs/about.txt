@@ -1,0 +1,6 @@
+This file lives at assets/docs/about.txt, but is served at /docs/about.txt
+because fs.Sub() re-roots the embedded file system at "assets".
+
+The listing at /docs/ works too: embed.FS is a full fs.ReadDirFS, so
+http.FileServerFS can enumerate its directories exactly like http.Dir
+enumerates directories on disk.

@@ -1,0 +1,19 @@
+FILE SERVER CHEATSHEET (package net/http)
+
+    http.Dir("./public")             the root directory, as an http.FileSystem
+    http.FileServer(root)            a Handler that serves files from it
+    http.FileServerFS(root fs.FS)    same, but accepts any fs.FS (embed.FS, ...)
+    http.StripPrefix("/static", h)   removes a URL prefix before calling h
+    http.ServeFile(w, r, name)       serve ONE named file or directory
+    http.ServeContent(w, r, ...)     like ServeFile, but for dynamic/in-memory content
+
+STATUS CODES YOU WILL MEET WHILE PLAYING WITH THIS
+
+    200 OK                      normal file response
+    206 Partial Content         Range request answered (curl -H "Range: bytes=0-9" ...)
+    301 Moved Permanently       /docs redirected to /docs/ (canonical form)
+    304 Not Modified            If-Modified-Since matched the file's Last-Modified
+    400 Bad Request             ".." found in the URL path when using http.ServeFile
+    403 Forbidden               file exists, but the OS denies reading it
+    404 Not Found               path matches no file
+    405 Method Not Allowed      right path, wrong HTTP method (on method-scoped routes)

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Embedded — it works!</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>This page lives inside the compiled binary</h1>
+    <p>
+        The file you are reading was compiled into the executable at build
+        time by a <code>//go:embed assets</code> directive. There is no
+        <code>assets</code> directory on the server that this program needs
+        at run time — build the binary, delete this folder, and the
+        program still serves everything.
+    </p>
+    <ul>
+        <li><a href="/">/</a> — this index.html (root of the embedded FS)</li>
+        <li><a href="/docs/">/docs/</a> — directory listing works over embed.FS too</li>
+    </ul>
+    <p>
+        Try it: <code>go build -o app . && ls -lh app</code> —
+        notice the assets are part of the binary's size now.
+    </p>
+</body>
+</html>

@@ -1,0 +1,17 @@
+This is notes.txt -- the exact bytes of this file are what the server sends.
+
+Its response headers (see for yourself with "curl -I"):
+
+    Content-Type:  text/plain; charset=utf-8   (guessed from the .txt extension)
+    Content-Length: <size of this file in bytes>
+    Accept-Ranges: bytes                      (Range requests are allowed)
+    Last-Modified: <this file's modification time>
+
+Experiments to run in another terminal while the server is up:
+
+    # 1. Fetch only the first 10 bytes (HTTP Range request -> 206):
+    curl -H "Range: bytes=0-9" http://localhost:8080/notes.txt
+
+    # 2. Conditional request (send Last-Modified back -> 304 Not Modified):
+    curl -I http://localhost:8080/notes.txt                       # copy the date
+    curl -I -H "If-Modified-Since: <that date>" http://localhost:8080/notes.txt

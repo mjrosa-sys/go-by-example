@@ -1,0 +1,11 @@
+{
+    "topic": "fileserver",
+    "package": "net/http",
+    "content_type": "application/json",
+    "note": "Go guesses the MIME type from the file extension, never from the contents.",
+    "next_steps": [
+        "read main.go top to bottom",
+        "then read README.md",
+        "then break things on purpose"
+    ]
+}

@@ -1,0 +1,32 @@
+/*
+ * Served with:
+ *     Content-Type: text/css; charset=utf-8
+ *
+ * Go guesses this from the ".css" extension (mime.TypeByExtension), never
+ * from the file's contents. If the extension is unknown, Go reads the first
+ * 512 bytes and *sniffs* the type (http.DetectContentType).
+ */
+
+body {
+    font-family: system-ui, sans-serif;
+    line-height: 1.55;
+    margin: 2rem auto;
+    max-width: 44rem;
+    padding: 0 1rem;
+    color: #17222e;
+    background: #f7f9fb;
+}
+
+h1, h2 {
+    color: #046a80;
+}
+
+code {
+    background: #e7eef2;
+    border-radius: 4px;
+    padding: 0 0.25rem;
+}
+
+ul li {
+    margin: 0.35rem 0;
+}

@@ -1,0 +1,14 @@
+You reached /docs/deep/nested.txt.
+
+The URL path maps straight to a path inside ./public, so nested
+directories just work. Two independent layers stop that mapping from
+ever escaping the tree:
+
+  1. http.Dir clamps paths at the root: it runs
+         path.Clean("/" + "/../../etc/passwd")
+     which collapses to "/etc/passwd", and then looks that up INSIDE
+     ./public (i.e. ./public/etc/passwd). The ".." simply evaporate.
+
+  2. The ServeMux itself never even lets a request containing "." or
+     ".." path segments reach a handler: it replies with a redirect to
+     the cleaned-up URL first.

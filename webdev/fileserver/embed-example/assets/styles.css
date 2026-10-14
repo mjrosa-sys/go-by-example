@@ -1,0 +1,20 @@
+/* Embedded inside the binary via //go:embed. */
+body {
+    font-family: system-ui, sans-serif;
+    line-height: 1.55;
+    margin: 2rem auto;
+    max-width: 44rem;
+    padding: 0 1rem;
+    color: #17222e;
+    background: #f2f7f4;
+}
+
+h1 {
+    color: #0a7d3c;
+}
+
+code {
+    background: #e2efe7;
+    border-radius: 4px;
+    padding: 0 0.25rem;
+}
